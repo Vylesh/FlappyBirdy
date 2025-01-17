@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,7 +7,7 @@ public class FlyBehaviour : MonoBehaviour
 {
     [SerializeField] private float _velocity = 1.5f;
     [SerializeField] private float _rotationSpeed = 10f;
-    
+
     private Rigidbody2D _rb;
 
     private void Start()
@@ -15,15 +17,15 @@ public class FlyBehaviour : MonoBehaviour
 
     private void Update()
     {
-        if (Mouse.current.leftButton.wasPressedThisFrame)
+        if (Touchscreen.current.primaryTouch.press.wasPressedThisFrame)
         {
-            _rb.linearVelocity = Vector2.up * _velocity;
-        }    
+            _rb.velocity = Vector2.up * _velocity;
+        }
     }
 
     private void FixedUpdate()
     {
-        transform.rotation = Quaternion.Euler(0, 0, _rb.velocity.x * _rotationSpeed);
+        transform.rotation = Quaternion.Euler(0, 0, _rb.velocity.y * _rotationSpeed);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

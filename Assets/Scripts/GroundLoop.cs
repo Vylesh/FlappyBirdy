@@ -4,9 +4,9 @@ public class GroundLoop : MonoBehaviour
 {
     [SerializeField] private float _speed = 1f;
     [SerializeField] private float _width = 6f;
-    
+
     private SpriteRenderer _spriteRenderer;
-    
+
     private Vector2 _startSize;
 
     private void Start()
@@ -17,11 +17,8 @@ public class GroundLoop : MonoBehaviour
 
     private void Update()
     {
-        _spriteRenderer.size = new Vector2(_spriteRenderer.size.x + _speed * Time.deltaTime , _spriteRenderer.size.y);
+        _spriteRenderer.size = new Vector2(_spriteRenderer.size.x + _speed * Time.deltaTime, _spriteRenderer.size.y);
 
-        if (_spriteRenderer.size.x > _width)
-        {
-            _spriteRenderer.size = _startSize;
-        }
+        if (_spriteRenderer.size.x > _width) _spriteRenderer.size = _startSize;
     }
 }

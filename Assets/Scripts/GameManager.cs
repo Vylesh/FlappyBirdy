@@ -8,17 +8,14 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
+        if (instance == null) instance = this;
         Time.timeScale = 1f;
     }
 
     public void GameOver()
     {
         GameOverCanvas.SetActive(true);
-        
+
         Time.timeScale = 0f;
     }
 
@@ -27,4 +24,3 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
-
