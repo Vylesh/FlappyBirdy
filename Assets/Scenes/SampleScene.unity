@@ -780,8 +780,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1386aac9ca1248e43b7542cb045651d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentScoreText: {fileID: 0}
-  _highScoreText: {fileID: 0}
+  _currentScoreText: {fileID: 289195629}
+  _highScoreText: {fileID: 761150159}
 --- !u!222 &289195631
 CanvasRenderer:
   m_ObjectHideFlags: 0
