@@ -15,14 +15,15 @@ namespace TMPro
         public override char Validate(ref string text, ref int pos, char ch)
         {
             Debug.Log("Trying to validate...");
-
+            
             // Return unless the character is a valid digit
             if (ch < '0' && ch > '9') return (char)0;
 
-            var length = text.Length;
+            int length = text.Length;
 
             // Enforce Phone Number format for every character input.
-            for (var i = 0; i < length + 1; i++)
+            for (int i = 0; i < length + 1; i++)
+            {
                 switch (i)
                 {
                     case 0:
@@ -96,6 +97,7 @@ namespace TMPro
                         pos = 14;
                         break;
                 }
+            }
 
             return ch;
         }

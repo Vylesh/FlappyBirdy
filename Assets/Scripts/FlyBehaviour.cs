@@ -19,13 +19,13 @@ public class FlyBehaviour : MonoBehaviour
     {
         if (Touchscreen.current.primaryTouch.press.wasPressedThisFrame)
         {
-            _rb.velocity = Vector2.up * _velocity;
+            _rb.linearVelocity = Vector2.up * _velocity;
         }
     }
 
     private void FixedUpdate()
     {
-        transform.rotation = Quaternion.Euler(0, 0, _rb.velocity.y * _rotationSpeed);
+        transform.rotation = Quaternion.Euler(0, 0, _rb.linearVelocity.y * _rotationSpeed);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
